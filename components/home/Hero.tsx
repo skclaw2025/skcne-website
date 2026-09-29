@@ -24,24 +24,21 @@ export default function Hero() {
           BACKGROUND CAMPUS IMAGE
       ========================================================= */}
       <div className="absolute inset-0 overflow-hidden">
-        <Image
-          src="/images/hero-campus.png"
-          alt="Shri Krishna College of Nursing Education campus"
-          fill
-          priority
-          sizes="100vw"
-          className="
-            scale-[1.04]
-            object-cover
-            object-[60%_center]
-            blur-[2px]
-            sm:object-center
-          "
-        />
+  <Image
+    src="/images/hero-campus.png"
+    alt="Shri Krishna College of Nursing Education campus"
+    fill
+    priority
+    sizes="100vw"
+    className="
+  scale-[1.01]
+  object-cover
+  object-[60%_center]
+  sm:object-center
+"
+  />
 
-        {/* Very light neutral veil — no green overlay */}
-        <div className="absolute inset-0 bg-white/10" />
-      </div>
+</div>
 
       {/* =========================================================
           HERO CONTENT
@@ -64,23 +61,25 @@ export default function Hero() {
               WHITE FROSTED HERO CARD
           ===================================================== */}
           <div
-            className="
-              mobile-hero-card
-              w-full
-              max-w-[760px]
-              rounded-[6px]
-              border
-              border-white/70
-              bg-white/90
-              p-5
-              shadow-[0_25px_80px_rgba(0,45,30,0.18)]
-              backdrop-blur-[8px]
+           
+  className="
+  mobile-hero-card
+  w-full
+  max-w-[760px]
+  rounded-[6px]
+  border
+  border-white/50
+  bg-white/35
+  p-5
+  shadow-[0_20px_60px_rgba(0,45,30,0.10)]
+  backdrop-blur-none
 
-              sm:p-9
-              md:p-10
-              lg:p-11
-            "
-          >
+  sm:p-9
+  md:p-10
+  lg:p-11
+"
+>
+          
             {/* =================================================
                 EYEBROW
             ================================================= */}

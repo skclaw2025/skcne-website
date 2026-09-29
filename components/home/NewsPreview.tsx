@@ -6,9 +6,9 @@ import SectionHeading from "../ui/SectionHeading";
 const newsItems = [
   {
     date: "Admissions",
-    title: "Admissions open for ANM – Auxiliary Nurse & Midwife",
+    title: "Admissions Open for ANM – Batch 2026–27",
     description:
-      "Applications are invited from eligible female candidates for the two-year ANM programme.",
+      "Applications are invited from eligible female candidates for the two-year ANM programme  for Batch 2026–27.",
     href: "/courses",
   },
   {

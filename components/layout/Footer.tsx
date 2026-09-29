@@ -37,7 +37,7 @@ export default function Footer() {
               aria-label={SITE.name}
             >
               <Image
-                src="/images/logo.jpeg"
+                src="/images/logo.png"
                 alt={SITE.name}
                 width={270}
                 height={80}

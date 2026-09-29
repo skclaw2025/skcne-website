@@ -11,9 +11,9 @@ export default function AboutPreview() {
 
           {/* LEFT — ABOUT */}
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#f36b21]">
-              About Shri Krishna
-            </p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f36b21]">
+  About Shri Krishna College of Nursing Education
+</p>
 
             <h2 className="font-display max-w-xl text-3xl font-bold leading-tight text-[#005b3c] sm:text-4xl">
               Building a strong foundation for a career in nursing

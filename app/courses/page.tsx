@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  BookOpen,
+  Building2,
   CheckCircle2,
   Clock3,
   GraduationCap,
+  HeartPulse,
   Hospital,
   ShieldCheck,
   Users,
 } from "lucide-react";
+
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -18,6 +20,10 @@ export const metadata: Metadata = {
   description:
     "Explore the 2-year ANM – Auxiliary Nurse & Midwife programme at Shri Krishna College of Nursing Education, Baghpat, approved by U.P. State Medical Faculty, Lucknow.",
 };
+
+/* =========================================================
+   COURSE FACTS
+========================================================= */
 
 const courseFacts = [
   {
@@ -42,27 +48,54 @@ const courseFacts = [
   },
 ];
 
-const subjects = [
-  "Community Health Nursing",
-  "Health Promotion",
+/* =========================================================
+   ACTUAL ANM SUBJECTS
+========================================================= */
+
+const firstYearSubjects = [
   "Primary Health Care",
+  "Health Promotion",
+  "Community Health Nursing",
   "Child Health Nursing",
-  "Midwifery",
-  "Nutrition",
-  "First Aid and Emergency Nursing",
-  "Environmental Sanitation",
-  "Infection Control",
-  "Health Center Management",
+  "Computer Education",
+  "English",
 ];
 
-const clinicalTraining = [
-  "Primary Health Centres (PHCs)",
-  "Community Health Centres (CHCs)",
-  "District Hospitals",
-  "Maternity Wards",
-  "Urban Health Camps",
-  "Rural Health Camps",
+const secondYearSubjects = [
+  "Midwifery",
+  "Health Centre Management",
 ];
+
+/* =========================================================
+   CLINICAL TRAINING
+========================================================= */
+
+const clinicalTraining = [
+  {
+    name: "Primary Health Centre",
+    shortName: "PHC",
+    icon: Hospital,
+  },
+  {
+    name: "Community Health Centre",
+    shortName: "CHC",
+    icon: Building2,
+  },
+  {
+    name: "District Hospital",
+    shortName: "District Level",
+    icon: Hospital,
+  },
+  {
+    name: "Private Hospital",
+    shortName: "Clinical Training",
+    icon: HeartPulse,
+  },
+];
+
+/* =========================================================
+   ELIGIBILITY
+========================================================= */
 
 const eligibility = [
   "Female candidates only",
@@ -71,10 +104,65 @@ const eligibility = [
   "Age 17–35 years at the time of admission",
 ];
 
+/* =========================================================
+   CAREER OPPORTUNITIES AFTER ANM
+========================================================= */
+
+const careerOpportunities = [
+  {
+    icon: HeartPulse,
+    title: "Auxiliary Nurse Midwife",
+    description:
+      "Work in community and primary healthcare settings, supporting nursing care, maternal health, newborn care and health education.",
+    category: "Community Healthcare",
+  },
+  {
+    icon: Hospital,
+    title: "Primary Healthcare Services",
+    description:
+      "Explore opportunities in primary healthcare centres, sub-centres and other community-based healthcare services, subject to applicable eligibility requirements.",
+    category: "Primary Health Services",
+  },
+  {
+    icon: Users,
+    title: "Maternal & Child Healthcare",
+    description:
+      "Build experience in maternal and child health services, including antenatal, postnatal, newborn care and health awareness activities.",
+    category: "Mother & Child Care",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Immunisation & Public Health",
+    description:
+      "Participate in immunisation activities, preventive healthcare initiatives, health education and community public-health programmes.",
+    category: "Public Health",
+  },
+  {
+    icon: Building2,
+    title: "Community Healthcare",
+    description:
+      "Work with healthcare organisations and community programmes focused on health awareness, family welfare and preventive healthcare.",
+    category: "Community Outreach",
+  },
+  {
+    icon: HeartPulse,
+    title: "NGO & Healthcare Projects",
+    description:
+      "Healthcare NGOs and community organisations may offer opportunities in health awareness, women and child health and community outreach projects.",
+    category: "Healthcare Organisations",
+  },
+];
+
+/* =========================================================
+   COMPONENT
+========================================================= */
+
 export default function CoursesPage() {
   return (
     <main>
-      {/* Course Hero */}
+      {/* =====================================================
+          COURSE HERO
+      ===================================================== */}
       <section className="border-b border-[#e3e9e5] bg-[#f3f8f5]">
         <Container>
           <div className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_auto] lg:items-center lg:py-24">
@@ -102,6 +190,7 @@ export default function CoursesPage() {
                   className="group inline-flex items-center gap-2 bg-[#f36b21] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#dc5712]"
                 >
                   Make an Enquiry
+
                   <ArrowRight
                     size={17}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -109,14 +198,15 @@ export default function CoursesPage() {
                 </Link>
 
                 <a
-                  href="tel:+919873830777"
+                  href="tel:+919711558989"
                   className="inline-flex items-center gap-2 border border-[#005b3c] px-6 py-3.5 text-sm font-semibold text-[#005b3c] transition-colors duration-300 hover:bg-[#005b3c] hover:text-white"
                 >
-                  Call +91 9873830777
+                  Call +91 9711558989
                 </a>
               </div>
             </div>
 
+            {/* Programme Approval */}
             <div className="border border-[#cdded4] bg-white p-7 sm:p-8 lg:w-[320px]">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f36b21]">
                 Programme Approval
@@ -148,7 +238,9 @@ export default function CoursesPage() {
         </Container>
       </section>
 
-      {/* Course Snapshot */}
+      {/* =====================================================
+          COURSE SNAPSHOT
+      ===================================================== */}
       <section className="border-b border-[#e3e9e5] bg-white">
         <Container>
           <div className="grid grid-cols-2 lg:grid-cols-4">
@@ -184,7 +276,9 @@ export default function CoursesPage() {
         </Container>
       </section>
 
-      {/* Programme Overview */}
+      {/* =====================================================
+          PROGRAMME OVERVIEW
+      ===================================================== */}
       <section className="section-padding bg-white">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
@@ -225,7 +319,9 @@ export default function CoursesPage() {
         </Container>
       </section>
 
-      {/* Eligibility */}
+      {/* =====================================================
+          ELIGIBILITY
+      ===================================================== */}
       <section className="section-padding bg-[#f3f8f5]">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
@@ -272,82 +368,275 @@ export default function CoursesPage() {
         </Container>
       </section>
 
-      {/* Subjects */}
+      {/* =====================================================
+          ACTUAL COURSE CURRICULUM
+      ===================================================== */}
       <section className="section-padding bg-white">
         <Container>
           <SectionHeading
             eyebrow="Course Curriculum"
             title="Subjects covered during the programme"
-            description="The curriculum provides a broad foundation in nursing practice, community health, maternal and child care and essential healthcare support."
+            description="The ANM programme is divided into subjects for the Ist Year and IInd Year."
             centered
           />
 
-          <div className="mx-auto grid max-w-5xl gap-px overflow-hidden border border-[#dce7e0] bg-[#dce7e0] sm:grid-cols-2">
-            {subjects.map((subject, index) => (
-              <div
-                key={subject}
-                className="flex items-center gap-4 bg-white px-6 py-5 transition-colors duration-300 hover:bg-[#f3f8f5]"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f3f8f5] text-xs font-bold text-[#005b3c]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+          <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
+            {/* IST YEAR */}
+            <div className="overflow-hidden border border-[#dce7e0] bg-white">
+              <div className="border-b border-[#dce7e0] bg-[#f1f7f4] px-6 py-5">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f36b21]">
+                  Auxiliary Nursing and Midwifery (ANM)
+                </p>
 
-                <span className="text-sm font-medium text-[#17352a] sm:text-base">
-                  {subject}
-                </span>
+                <h3 className="font-display mt-2 text-2xl font-bold text-[#005b3c]">
+                  Ist Year
+                </h3>
               </div>
-            ))}
+
+              <div className="divide-y divide-[#e3e9e5]">
+                {firstYearSubjects.map((subject) => (
+                  <div
+                    key={subject}
+                    className="flex items-center gap-4 px-6 py-5 transition-colors duration-300 hover:bg-[#f7faf8]"
+                  >
+                    <CheckCircle2
+                      size={19}
+                      strokeWidth={1.7}
+                      className="shrink-0 text-[#f36b21]"
+                    />
+
+                    <span className="text-sm font-medium text-[#17352a] sm:text-base">
+                      {subject}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* IIND YEAR */}
+            <div className="overflow-hidden border border-[#dce7e0] bg-white">
+              <div className="border-b border-[#dce7e0] bg-[#f1f7f4] px-6 py-5">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f36b21]">
+                  Auxiliary Nursing and Midwifery (ANM)
+                </p>
+
+                <h3 className="font-display mt-2 text-2xl font-bold text-[#005b3c]">
+                  IInd Year
+                </h3>
+              </div>
+
+              <div className="divide-y divide-[#e3e9e5]">
+                {secondYearSubjects.map((subject) => (
+                  <div
+                    key={subject}
+                    className="flex items-center gap-4 px-6 py-5 transition-colors duration-300 hover:bg-[#f7faf8]"
+                  >
+                    <CheckCircle2
+                      size={19}
+                      strokeWidth={1.7}
+                      className="shrink-0 text-[#f36b21]"
+                    />
+
+                    <span className="text-sm font-medium text-[#17352a] sm:text-base">
+                      {subject}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="hidden min-h-[136px] lg:block" />
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Clinical Training */}
-      <section className="section-padding bg-[#005b3c]">
+      {/* =====================================================
+          CLINICAL TRAINING
+      ===================================================== */}
+      <section className="section-padding bg-[#f1f7f4]">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">
+            {/* LEFT CONTENT */}
             <div>
-              <div className="flex h-14 w-14 items-center justify-center border border-white/20 bg-white/10 text-white">
+              <div className="flex h-14 w-14 items-center justify-center border border-[#cfe0d8] bg-white text-[#005b3c]">
                 <Hospital size={27} strokeWidth={1.5} />
               </div>
 
               <p className="mt-7 text-sm font-semibold uppercase tracking-[0.18em] text-[#f36b21]">
-                Practical Training
+                Clinical Training
               </p>
 
-              <h2 className="font-display mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
-                Learning beyond the classroom
+              <h2 className="font-display mt-4 text-3xl font-bold leading-tight text-[#005b3c] sm:text-4xl">
+                Practical learning in healthcare settings
               </h2>
 
               <div className="mt-5 h-[3px] w-12 bg-[#f36b21]" />
 
-              <p className="mt-6 max-w-xl text-base leading-7 text-white/70">
-                Practical exposure helps students connect theoretical
-                knowledge with real healthcare situations and develop
-                confidence in patient care.
+              <p className="mt-6 max-w-xl text-base leading-7 text-[#68756f]">
+                Students receive practical exposure in healthcare settings
+                where they can develop essential nursing skills and understand
+                patient care in real-world situations.
               </p>
             </div>
 
-            <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2">
-              {clinicalTraining.map((item, index) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 bg-[#005b3c] px-6 py-5"
-                >
-                  <span className="text-xs font-bold tracking-[0.14em] text-[#f36b21]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+            {/* TRAINING LOCATIONS */}
+            <div className="grid gap-4 sm:grid-cols-2">
+              {clinicalTraining.map((item) => {
+                const Icon = item.icon;
 
-                  <span className="text-sm font-medium text-white/85">
-                    {item}
-                  </span>
-                </div>
-              ))}
+                return (
+                  <div
+                    key={item.name}
+                    className="flex items-center gap-4 border border-[#dce7e0] bg-white px-6 py-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#b9d2c5] hover:shadow-sm"
+                  >
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f1f7f4] text-[#005b3c]">
+                      <Icon size={22} strokeWidth={1.6} />
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm font-bold text-[#17352a] sm:text-base">
+                        {item.name}
+                      </h3>
+
+                      <p className="mt-1 text-xs text-[#68756f]">
+                        {item.shortName}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Certification */}
+      {/* =====================================================
+          CAREER OPPORTUNITIES AFTER ANM
+      ===================================================== */}
+      <section
+        id="career-opportunities"
+        className="relative overflow-hidden bg-white py-20 sm:py-24"
+      >
+        {/* Decorative background elements */}
+        <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#f3f8f5] blur-3xl" />
+
+        <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#eef8f4] blur-3xl" />
+
+        <Container>
+          {/* SECTION HEADING */}
+          <div className="relative mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f36b21]">
+              Career Opportunities
+            </p>
+
+            <h2 className="font-display mt-4 text-3xl font-bold leading-tight text-[#005b3c] sm:text-4xl lg:text-5xl">
+              Where Can an ANM Career Take You?
+            </h2>
+
+            <div className="orange-line mx-auto mt-5" />
+
+            <p className="mt-6 text-base leading-7 text-[#68756f] sm:text-lg">
+              ANM professionals can explore opportunities in nursing,
+              maternal and child healthcare, community health and public
+              healthcare services, depending on the role and applicable
+              eligibility requirements.
+            </p>
+          </div>
+
+          {/* CAREER CARDS */}
+          <div className="relative mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {careerOpportunities.map((career) => {
+              const Icon = career.icon;
+
+              return (
+                <div
+                  key={career.title}
+                  className="group relative overflow-hidden border border-[#dce7e0] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#b9d2c5] hover:shadow-lg"
+                >
+                  {/* Top accent */}
+                  <div className="absolute left-0 top-0 h-1 w-0 bg-[#f36b21] transition-all duration-300 group-hover:w-full" />
+
+                  {/* Icon */}
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f1f7f4] text-[#005b3c] transition-all duration-300 group-hover:bg-[#005b3c] group-hover:text-white">
+                    <Icon size={26} strokeWidth={1.5} />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="font-display mt-6 text-xl font-bold text-[#005b3c]">
+                    {career.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-[#68756f]">
+                    {career.description}
+                  </p>
+
+                  {/* Category */}
+                  <div className="mt-6 flex items-center justify-between border-t border-[#e8eee9] pt-5">
+                    <span className="text-xs font-bold uppercase tracking-[0.08em] text-[#f36b21]">
+                      {career.category}
+                    </span>
+
+                    <ArrowRight
+                      size={17}
+                      className="text-[#005b3c] transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* CAREER JOURNEY STRIP */}
+          <div className="relative mt-14 overflow-hidden bg-[#005b3c]">
+            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/5" />
+
+            <div className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-white/5" />
+
+            <div className="relative grid gap-8 px-7 py-10 sm:px-10 lg:grid-cols-[1fr_auto] lg:items-center lg:px-14">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#f7a66d]">
+                  Your Professional Journey
+                </p>
+
+                <h3 className="font-display mt-3 text-2xl font-bold text-white sm:text-3xl">
+                  Learn. Serve. Grow in Healthcare.
+                </h3>
+
+                <p className="mt-4 max-w-2xl text-sm leading-6 text-[#d8ebe2] sm:text-base">
+                  ANM education provides a foundation for work in nursing and
+                  community healthcare. With professional experience and
+                  further education, students can continue developing their
+                  opportunities within the healthcare sector.
+                </p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="group inline-flex w-fit items-center gap-2 bg-[#f36b21] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#dc5712]"
+              >
+                Explore Admissions
+
+                <ArrowRight
+                  size={17}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+          </div>
+
+          {/* DISCLAIMER */}
+          <p className="relative mx-auto mt-6 max-w-4xl text-center text-xs leading-5 text-[#68756f]">
+            Career opportunities, job titles, recruitment processes and
+            eligibility requirements may vary by employer, state and applicable
+            government or regulatory rules. Students should check the
+            requirements applicable to the position they wish to pursue.
+          </p>
+        </Container>
+      </section>
+
+      {/* =====================================================
+          CERTIFICATION
+      ===================================================== */}
       <section className="section-padding bg-white">
         <Container>
           <div className="mx-auto max-w-4xl border border-[#dfe8e2] bg-[#fafbf8] p-8 text-center sm:p-12">
@@ -372,7 +661,9 @@ export default function CoursesPage() {
         </Container>
       </section>
 
-      {/* Admission CTA */}
+      {/* =====================================================
+          ADMISSION CTA
+      ===================================================== */}
       <section className="bg-[#f3f8f5]">
         <Container>
           <div className="flex flex-col gap-7 py-14 sm:py-16 lg:flex-row lg:items-center lg:justify-between">
@@ -396,6 +687,7 @@ export default function CoursesPage() {
               className="group inline-flex w-fit shrink-0 items-center gap-2 bg-[#f36b21] px-7 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#dc5712]"
             >
               Enquire About Admission
+
               <ArrowRight
                 size={17}
                 className="transition-transform duration-300 group-hover:translate-x-1"
